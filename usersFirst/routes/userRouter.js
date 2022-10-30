@@ -37,31 +37,9 @@ router.get("/:id", (req, res, next) => {
     });
 });
 
-router.get("/:id/edit", (req, res) => {
-    var id = req.params.id;
-    User.findById(id, (err, nextuser) => {
-        if (err) return next(err);
-        res.render("editUserForm", { user: nextuser });
+router.get("/:id/edit", (req, res) => {});
 
-    })
-});
-router.get("/:id/delete", (req, res) => {
-    var id = req.params.id;
-    User.findByIdAndDelete(id, (err, nextuser) => {
-        if (err) return next(err);
-        res.redirect("/users");
-
-    })
-});
-
-router.post("/:id", (req, res) => {
-    var id = req.params.id;
-    User.findByIdAndUpdate(id, (err, nextuser) => {
-        if (err) return next(err);
-        res.render("/users/" + id)
-    });
-
-})
+router.put("/:id", (req, res) => {});
 
 router.delete("/:id", (req, res) => {});
 
